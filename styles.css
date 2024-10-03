@@ -6,6 +6,7 @@ body {
     font-family: "Roboto", sans-serif;
     background-color: black;
     color: white;
+    height: 100vh;
 }
 
 .header {
@@ -36,16 +37,22 @@ li a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
 .tennis {
-    position: relative;
-    height: 300px;
-    width: 300px;
+    z-index: -1; /* Move the ball behind other elements */
+    position: fixed; /* Fix the ball in the background */
+    top: 50%;
+    left: 50%;
+    height: 20vh; /* Tennis ball is 50% of the viewport height */
+    width: 20vw;  /* Tennis ball is 50% of the viewport width */
     background-color: #ccff00;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
+    transform: translate(-50%, -50%);
+    animation: animate 1.5s linear infinite;
 }
 
 /* Tennis ball curved lines */
@@ -74,6 +81,13 @@ li a {
 
 @keyframes animate {
     0%{
+    transform: translate(-50%, -50%)translateY(-10vh) rotate(0deg);
+    }
+    50% {
+        transform: translate(-50%, -50%)translateY(0px) rotate(180deg);
+    }
+    100%{
+        transform: translate(-50%, -50%)translateY(-10vh) rotate(360deg);
 
     }
 }
