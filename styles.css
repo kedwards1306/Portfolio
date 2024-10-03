@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: black;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-style: none;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    display: inline;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tennis {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    background-color: #ccff00;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Tennis ball curved lines */
+.tennis::before, .tennis::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 10px solid white;
+    background: transparent;
+
+}
+
+/* First curved line */
+.tennis::before {
+    left: -65%;
+}
+
+/* Second curved line */
+.tennis::after {
+    right: -65%;
+
+}
+
+@keyframes animate {
+    0%{
+
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
