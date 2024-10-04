@@ -1,60 +1,119 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body {
     font-family: "Roboto", sans-serif;
     background-color: black;
     color: white;
-    height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* Header Styling */
 .header {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    font-style: none;
+    text-align: center;
+    padding: 50px 0;
+    background-color: #1e1e1e;
+    color: #ccff00;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-ul li {
+.header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #111;
+    padding: 15px 0;
+}
+
+.navbar ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     list-style: none;
-    display: inline;
 }
 
-li a {
-    text-decoration: none;
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
     color: white;
-    font-size: 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
+.navbar a:hover {
+    background-color: #ccff00;
+    color: black;
+}
+
+/* About Section */
+.about {
+    padding: 50px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: #ccff00;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+/* Projects Section */
+.projects {
+    padding: 50px;
+    text-align: center;
+    background-color: #1e1e1e;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    color: #ccff00;
+    margin-bottom: 20px;
+}
+
+.projects p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+/* Tennis Ball Animation */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
 .tennis {
-    z-index: -1; /* Move the ball behind other elements */
-    position: fixed; /* Fix the ball in the background */
-    top: 50%;
-    left: 50%;
-    height: 20vh; /* Tennis ball is 50% of the viewport height */
-    width: 20vw;  /* Tennis ball is 50% of the viewport width */
+    z-index: -1;
+    position: absolute;
+    top: 0; /* Start at the top of the viewport */
+    left: 0; /* Start from the left edge */
+    height: 20vh; /* Ball size */
+    width: 20vh; /* Ball size */
     background-color: #ccff00;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: bounce 3s ease-in-out infinite; /* Bounce animation */
     overflow: hidden;
-    transform: translate(-50%, -50%);
-    animation: animate 1.5s linear infinite;
 }
-
 /* Tennis ball curved lines */
 .tennis::before, .tennis::after {
     content: "";
@@ -63,9 +122,8 @@ li a {
     height: 100%;
     border-radius: 50%;
     box-sizing: border-box;
-    border: 10px solid white;
+    border: 5px solid white;
     background: transparent;
-
 }
 
 /* First curved line */
@@ -76,26 +134,49 @@ li a {
 /* Second curved line */
 .tennis::after {
     right: -65%;
-
 }
-
-@keyframes animate {
-    0%{
-    transform: translate(-50%, -50%)translateY(-10vh) rotate(0deg);
+/* Animation Keyframes */
+@keyframes bounce {
+    0% {
+        top: 0; /* Start at the top left */
+        left: 0; /* Start from the left edge */
+    }
+    25% {
+        top: 30vh; /* Move down */
+        left: 25%; /* Move right */
     }
     50% {
-        transform: translate(-50%, -50%)translateY(0px) rotate(180deg);
+        top: 60vh; /* Move down */
+        left: 50%; /* Move right */
     }
-    100%{
-        transform: translate(-50%, -50%)translateY(-10vh) rotate(360deg);
-
+    75% {
+        top: 30vh; /* Move up */
+        left: 75%; /* Move right */
+    }
+    100% {
+        top: 0; /* Move back to the top */
+        left: 100%; /* Move all the way to the right */
     }
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tennis {
+        height: 15vh; /* Smaller ball size for mobile */
+        width: 15vh; /* Smaller ball size for mobile */
+    }
+}
+
+/* Footer */
 .footer {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
+    background-color: #111;
+    padding: 20px;
     text-align: center;
-    color: white;
+    color: #888;
+    font-size: 1rem;
+}
+
+.footer p {
+    margin: 0;
+    color: #ccff00;
 }
