@@ -78,6 +78,46 @@ body {
     padding: 50px;
     text-align: center;
     background-color: #1e1e1e;
+
+}
+
+.content{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 20px;
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: 50% 50%; /* Single column within the 60% side */
+    gap: 20px;
+}
+.card {
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    color: #ffffff;
+    transition: transform 0.2s ease;
+    width: 100%; /* Full width within the 60% side */
+    height: auto; /* Let the card height adjust based on content */
+}
+
+.card-header {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90%;
+    margin-top: 15px;
+}
+
+.card-footer img {
+    width: 15px;
+    height: 15px;
 }
 
 .projects h2 {
@@ -177,6 +217,7 @@ body {
     text-align: center;
     color: #888;
     font-size: 1rem;
+    bottom: 0;
 }
 
 .footer p {
