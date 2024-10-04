@@ -138,24 +138,36 @@ body {
 /* Animation Keyframes */
 @keyframes bounce {
     0% {
-        top: 0; /* Start at the top left */
-        left: 0; /* Start from the left edge */
+        top: -20vh; /* Start above the screen */
+        left: 0;
+    }
+    10% {
+        top: 5vh;
+        left: 10vw;
     }
     25% {
-        top: 30vh; /* Move down */
-        left: 25%; /* Move right */
+        top: 50vh; /* Ball falling down */
+        left: 30vw;
+    }
+    40% {
+        top: 70vh; /* Almost at the bottom */
+        left: 50vw;
     }
     50% {
-        top: 60vh; /* Move down */
-        left: 50%; /* Move right */
+        top: 100vh; /* Reach bottom */
+        left: 60vw;
+    }
+    60% {
+        top: 70vh; /* Bounce back up */
+        left: 70vw;
     }
     75% {
-        top: 30vh; /* Move up */
-        left: 75%; /* Move right */
+        top: 50vh;
+        left: 80vw;
     }
     100% {
-        top: 0; /* Move back to the top */
-        left: 100%; /* Move all the way to the right */
+        top: -20vh; /* Back to the top, off-screen */
+        left: 100vw;
     }
 }
 
