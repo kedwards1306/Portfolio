@@ -104,8 +104,8 @@ body {
 .tennis {
     z-index: -1;
     position: absolute;
-    top: 0; /* Start at the top of the viewport */
-    left: 0; /* Start from the left edge */
+    top: 0;
+    left: 0;
     height: 20vh; /* Ball size */
     width: 20vh; /* Ball size */
     background-color: #ccff00;
@@ -138,38 +138,29 @@ body {
 /* Animation Keyframes */
 @keyframes bounce {
     0% {
-        top: -20vh; /* Start above the screen */
         left: 0;
+        top: 0;
+        transform: scale(1);
     }
-    10% {
-        top: 5vh;
-        left: 10vw;
-    }
-    25% {
-        top: 50vh; /* Ball falling down */
-        left: 30vw;
-    }
-    40% {
-        top: 70vh; /* Almost at the bottom */
-        left: 50vw;
-    }
+    /*No 25% so the animation is smoother*/
+
     50% {
-        top: 100vh; /* Reach bottom */
-        left: 60vw;
-    }
-    60% {
-        top: 70vh; /* Bounce back up */
-        left: 70vw;
+        left: 50%;
+        top: 80%; /* Ball hits "ground" */
+        transform: scale(1); /* Back to normal */
     }
     75% {
-        top: 50vh;
-        left: 80vw;
+        left: 75%;
+        top: 60%; /* Ball goes up again */
+        transform: scale(1); /* Squash */
     }
     100% {
-        top: -20vh; /* Back to the top, off-screen */
-        left: 100vw;
+        left: 100%;
+        top: 80%; /* Ball back down */
+        transform: scale(1); /* Normal scale */
     }
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
