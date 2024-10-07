@@ -83,7 +83,7 @@ body {
 
 .content{
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 80% 20%;
     gap: 20px;
 }
 .card-grid {
