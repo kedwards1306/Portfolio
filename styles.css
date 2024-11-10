@@ -28,6 +28,9 @@ body {
 .navbar {
     background-color: #111;
     padding: 15px 0;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
 }
 
 .navbar ul {
@@ -204,9 +207,14 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+   .navbar ul {
+    display: flex;
+     width: 100%;
+        flex-direction: inline;
+    }
     .tennis {
-        height: 15vh; /* Smaller ball size for mobile */
-        width: 15vh; /* Smaller ball size for mobile */
+        height: 10vh; /* Smaller ball size for mobile */
+        width: 10vh; /* Smaller ball size for mobile */
     }
 }
 
