@@ -8,6 +8,7 @@ body {
     background-color: black;
     color: white;
     overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-y: auto;
 }
 
 /* Header Styling */
@@ -247,6 +248,7 @@ body {
         padding: 10px 0;
     }
 
+
     .navbar li {
         margin: 10px 0; /* Add spacing between nav items */
     }
@@ -254,20 +256,21 @@ body {
         height: 10vh; /* Smaller ball size for mobile */
         width: 10vh; /* Smaller ball size for mobile */
     }
-}
+
 /* Project View */
-@media (max-width: 768px) {
+
     .projects {
-        overflow-x: auto; /* Enable horizontal scrolling */
-        padding: 10px 0;
+        overflow-y: auto; /* Ensure vertical scrolling */
+        padding: 20px;
     }
     .card-grid {
-        grid-template-columns: 1fr; /* Single column layout */
+       flex-direction: column; /* Single column layout */
+        align-items: center;
         gap: 20px; /* Maintain space between cards */
     }
 
     .card {
-        width: 100%; /* Full width of the container */
+        width: 90%; /* Full width of the container */
     }
 }
 
