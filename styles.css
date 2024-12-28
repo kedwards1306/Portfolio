@@ -28,7 +28,7 @@ body {
 .navbar {
     background-color: #111;
     padding: 15px 0;
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     overflow: hidden;
 }
@@ -75,6 +75,36 @@ body {
     font-size: 1.2rem;
     color: #ddd;
 }
+.techstack {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: black;
+    flex-wrap: wrap; /* Wraps items if they don't fit in one line */
+}
+
+.techstack h2 {
+    width: 100%; /* Ensure the heading spans across the full width */
+    font-size: 2.5rem;
+    color: #ccff00;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.techstack img {
+    margin: 10px; /* Add spacing between icons */
+    width: 50px; /* Adjust the icon size if needed */
+    height: 50px;
+}
+
+.techstack p {
+    width: 100%; /* Ensures the text spans across the full width */
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #ddd;
+    text-align: center;
+}
 
 /* Projects Section */
 .projects {
@@ -90,16 +120,19 @@ body {
     gap: 20px;
 }
 .card-grid {
-    display: grid;
-    grid-template-columns: 50% 50%; /* Single column within the 60% side */
-    gap: 20px;
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-wrap: wrap; /* Allow cards to wrap onto new lines if needed */
+    gap: 20px; /* Space between cards */
+    justify-content: space-between; /* Ensure cards are spaced out */
+
 }
+
 .card {
     background-color: #2c2c2c;
     border-radius: 8px;
     color: #ffffff;
     transition: transform 0.2s ease;
-    width: 100%; /* Full width within the 60% side */
+    width: 30%; /* Adjust card width to fit 3 in a row */
     height: auto; /* Let the card height adjust based on content */
 }
 
@@ -144,21 +177,22 @@ body {
     overflow: hidden;
 }
 
-.tennis {
+/* .tennis {
     z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
-    height: 20vh; /* Ball size */
-    width: 20vh; /* Ball size */
+    height: 20vh;
+    width: 20vh;
     background-color: #ccff00;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     animation: bounce 3s ease-in-out infinite; /* Bounce animation */
-    overflow: hidden;
-}
+    /* overflow: hidden; */
+/* } */
+
 /* Tennis ball curved lines */
-.tennis::before, .tennis::after {
+/* .tennis::before, .tennis::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -169,52 +203,71 @@ body {
     background: transparent;
 }
 
-/* First curved line */
 .tennis::before {
     left: -65%;
 }
 
-/* Second curved line */
+
 .tennis::after {
     right: -65%;
-}
+} */
 /* Animation Keyframes */
-@keyframes bounce {
+/* @keyframes bounce {
     0% {
         left: 0;
         top: 0;
         transform: scale(1);
     }
     /*No 25% so the animation is smoother*/
-
+/*
     50% {
         left: 50%;
-        top: 80%; /* Ball hits "ground" */
-        transform: scale(1); /* Back to normal */
+        top: 80%;
+        transform: scale(1);
     }
     75% {
         left: 75%;
-        top: 60%; /* Ball goes up again */
-        transform: scale(1); /* Squash */
+        top: 60%;
+        transform: scale(1);
     }
     100% {
         left: 100%;
-        top: 80%; /* Ball back down */
-        transform: scale(1); /* Normal scale */
+        top: 80%;
+        transform: scale(1);
     }
-}
+} */
+
 
 
 /* Responsive Design */
 @media (max-width: 768px) {
-   .navbar ul {
-    display: flex;
-     width: 100%;
-        flex-direction: inline;
+    .navbar ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center the nav items */
+        padding: 10px 0;
+    }
+
+    .navbar li {
+        margin: 10px 0; /* Add spacing between nav items */
     }
     .tennis {
         height: 10vh; /* Smaller ball size for mobile */
         width: 10vh; /* Smaller ball size for mobile */
+    }
+}
+/* Project View */
+@media (max-width: 768px) {
+    .projects {
+        overflow-x: auto; /* Enable horizontal scrolling */
+        padding: 10px 0;
+    }
+    .card-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 20px; /* Maintain space between cards */
+    }
+
+    .card {
+        width: 100%; /* Full width of the container */
     }
 }
 
