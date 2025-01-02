@@ -7,8 +7,8 @@ body {
     font-family: "Roboto", sans-serif;
     background-color: black;
     color: white;
-    overflow-x: hidden; /* Prevent horizontal scroll */
     overflow-y: auto;
+    height: auto;
 }
 
 /* Header Styling */
@@ -112,16 +112,18 @@ body {
     padding: 50px;
     text-align: center;
     background-color: #1e1e1e;
-
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .content {
-    display: flex; /* Change grid to flexbox */
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center content horizontally */
-    gap: 10px; /* Add spacing between sections */
-    width: 100%; /* Ensure full width */
-    margin: 0 auto; /* Center content horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .card-grid {
@@ -129,7 +131,7 @@ body {
     flex-wrap: wrap; /* Allow cards to wrap onto new lines */
     justify-content: center; /* Center the cards horizontally */
     gap: 5px;
-    width: 100%; /* Ensure grid spans the full width */
+    width: 100%;
 }
 
 .card {
@@ -137,9 +139,10 @@ body {
     border-radius: 8px;
     color: #ffffff;
     transition: transform 0.2s ease;
-    width: 300px; /* Fixed width for consistency */
-    height: auto; /* Let the card height adjust based on content */
-    margin: 0 auto; /* Center individual cards */
+    max-width: 300px;
+    min-width: 200px;
+    height: auto;
+    margin: 0 auto;
 }
 .card-header {
     font-size: 18px;
@@ -172,6 +175,7 @@ body {
     margin: 0 auto;
     font-size: 1.2rem;
     color: #ddd;
+
 }
 
 /* Tennis Ball Animation */
@@ -179,7 +183,7 @@ body {
     position: relative;
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow: auto;
 }
 
 /* .tennis {
@@ -245,13 +249,12 @@ body {
 
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .navbar ul {
         flex-direction: column; /* Stack items vertically */
         align-items: center; /* Center the nav items */
-        padding: 10px 0;
+        padding: 5px 0;
     }
-
 
     .navbar li {
         margin: 10px 0; /* Add spacing between nav items */
@@ -262,17 +265,14 @@ body {
     }
 
 /* Project View */
-
     .projects {
-        overflow-y: auto; /* Ensure vertical scrolling */
-        padding: 20px;
+        padding: 10px;
     }
     .card-grid {
        flex-direction: column; /* Single column layout */
         align-items: center;
         gap: 20px; /* Maintain space between cards */
     }
-
     .card {
         width: 90%; /* Full width of the container */
     }
