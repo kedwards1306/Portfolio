@@ -115,17 +115,21 @@ body {
 
 }
 
-.content{
-    display: grid;
-    grid-template-columns: 80% 20%;
-    gap: 20px;
+.content {
+    display: flex; /* Change grid to flexbox */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+    gap: 10px; /* Add spacing between sections */
+    width: 100%; /* Ensure full width */
+    margin: 0 auto; /* Center content horizontally */
 }
-.card-grid {
-    display: flex; /* Use flexbox for horizontal layout */
-    flex-wrap: wrap; /* Allow cards to wrap onto new lines if needed */
-    gap: 20px; /* Space between cards */
-    justify-content: space-between; /* Ensure cards are spaced out */
 
+.card-grid {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow cards to wrap onto new lines */
+    justify-content: center; /* Center the cards horizontally */
+    gap: 5px;
+    width: 100%; /* Ensure grid spans the full width */
 }
 
 .card {
@@ -133,10 +137,10 @@ body {
     border-radius: 8px;
     color: #ffffff;
     transition: transform 0.2s ease;
-    width: 30%; /* Adjust card width to fit 3 in a row */
+    width: 300px; /* Fixed width for consistency */
     height: auto; /* Let the card height adjust based on content */
+    margin: 0 auto; /* Center individual cards */
 }
-
 .card-header {
     font-size: 18px;
     font-weight: 600;
