@@ -179,12 +179,13 @@ body {
 }
 
 /* Tennis Ball Animation */
-.container {
+/* .container {
     position: relative;
     height: 100vh;
     width: 100vw;
-    overflow: auto;
-}
+
+} */
+
 
 /* .tennis {
     z-index: -1;
