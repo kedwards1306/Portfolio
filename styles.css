@@ -144,6 +144,10 @@ body {
     height: auto;
     margin: 0 auto;
 }
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(204, 255, 0, 0.2);
+}
 .card-header {
     font-size: 18px;
     font-weight: 600;
@@ -177,7 +181,55 @@ body {
     color: #ddd;
 
 }
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
 
+button.open-live {
+    background-color: #ccff00;
+    color: #000;
+    border: none;
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(204, 255, 0, 0.3);
+}
+
+button.open-live:hover {
+    background-color: #b2e100;
+    transform: scale(1.05);
+}
+button.github-link {
+    background-color: transparent;
+    border: 2px solid #ccff00;
+    color: #ccff00;
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+button.github-link:hover {
+    background-color: #ccff00;
+    color: black;
+    transform: scale(1.05);
+}
+.button-icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
 /* Tennis Ball Animation */
 /* .container {
     position: relative;
@@ -264,7 +316,10 @@ body {
         height: 10vh; /* Smaller ball size for mobile */
         width: 10vh; /* Smaller ball size for mobile */
     }
-
+    .navbar a:hover {
+        background-color: #ccff00;
+        color: black;
+    }
 /* Project View */
     .projects {
         padding: 10px;
