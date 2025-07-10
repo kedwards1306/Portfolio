@@ -146,7 +146,7 @@ body {
 }
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(204, 255, 0, 0.2);
+    box-shadow: 0 8px 16px  #ccff00d1;
 }
 .card-header {
     font-size: 18px;
@@ -161,6 +161,15 @@ body {
     align-items: center;
     width: 90%;
     margin-top: 15px;
+}
+.project-image {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .card-footer img {
@@ -331,6 +340,32 @@ button.github-link:hover {
     }
     .card {
         width: 90%; /* Full width of the container */
+        border: 1px solid #444;
+        box-shadow: 0 4px 8px rgba(204, 255, 0, 0.2);
+    }
+    .card:active { /* Card active since the hover don't work on mobile */
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px  #ccff00d1;
+    }
+
+
+    button.open-live {
+        background-color: #ccff00;
+        color: #000;
+        border: none;
+        padding: 10px 16px;
+        font-size: 0.95rem;
+        font-weight: bold;
+        border-radius: 25px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(204, 255, 0, 0.3);
+    }
+    
+    button.open-live:hover {
+        background-color: #b2e100;
+        transform: scale(1.05);
     }
 }
 
